@@ -4,6 +4,8 @@ import 'package:gomedserv/widgets/custom_button.dart';
 import 'package:gomedserv/widgets/bottomnavigation.dart'; // Assuming you have this widget
 
 class AddVendor extends StatefulWidget {
+  const AddVendor({super.key});
+
   @override
   _AddVendorState createState() => _AddVendorState();
 }
@@ -133,11 +135,11 @@ class _AddVendorState extends State<AddVendor> {
             borderRadius: BorderRadius.circular(12.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
+            borderSide: const BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
             borderRadius: BorderRadius.circular(12.0),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
+            borderSide: const BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
             borderRadius: BorderRadius.circular(12.0),
           ),
         ),
@@ -155,11 +157,11 @@ class _AddVendorState extends State<AddVendor> {
           borderRadius: BorderRadius.circular(12.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
+          borderSide: const BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
           borderRadius: BorderRadius.circular(12.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
+          borderSide: const BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
           borderRadius: BorderRadius.circular(12.0),
         ),
       ),

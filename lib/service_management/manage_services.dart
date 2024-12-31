@@ -5,6 +5,8 @@ import 'package:gomedserv/widgets/topbar.dart';
 import 'package:gomedserv/models/manage_users_model.dart';
 
 class ManageServices extends StatefulWidget {
+  const ManageServices({super.key});
+
   @override
   _ManageServicesState createState() => _ManageServicesState();
 }
@@ -77,13 +79,13 @@ class _ManageServicesState extends State<ManageServices> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddServiceScreen(),
+                  builder: (context) => const AddServiceScreen(),
                 ),
               );
             },
@@ -145,7 +147,7 @@ class _ManageServicesState extends State<ManageServices> {
   }
 
   Widget _buildUserList(List<User> users, double screenHeight) {
-    return Container(
+    return SizedBox(
       height: screenHeight *
           0.6, // Adjust the height as per your need (e.g., 70% of screen height)
       child: ListView.builder(
@@ -162,7 +164,7 @@ class _ManageServicesState extends State<ManageServices> {
             margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 12.0),
             child: ListTile(
               title: Text(
-                "${user.username ?? "No Name"}",
+                user.username ?? "No Name",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: screenHeight *
@@ -174,12 +176,12 @@ class _ManageServicesState extends State<ManageServices> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${user.email ?? "No Email"}",
+                    user.email ?? "No Email",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
                   Text(
-                    "${user.date ?? "No Date"}",
+                    user.date ?? "No Date",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -196,7 +198,7 @@ class _ManageServicesState extends State<ManageServices> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "${user.status ?? "Active"}",
+                    user.status ?? "Active",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -212,7 +214,7 @@ class _ManageServicesState extends State<ManageServices> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AddServiceScreen()),
+                  MaterialPageRoute(builder: (context) => const AddServiceScreen()),
                 );
               },
             ),

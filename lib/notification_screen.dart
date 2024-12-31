@@ -8,7 +8,7 @@ class NotificationItem extends StatelessWidget {
   final bool isRead;
   final bool isImportant;
 
-  NotificationItem({
+  const NotificationItem({super.key, 
     required this.title,
     required this.sender,
     required this.time,
@@ -21,7 +21,7 @@ class NotificationItem extends StatelessWidget {
     return ListTile(
       leading: Icon(
         isImportant ? Icons.star : Icons.notifications,
-        color: Color(0xFF2A9D8F),
+        color: const Color(0xFF2A9D8F),
         size: 25,
       ),
       title: Text(title,
@@ -37,31 +37,33 @@ class NotificationItem extends StatelessWidget {
 }
 
 class NotificationList extends StatefulWidget {
+  const NotificationList({super.key});
+
   @override
   _NotificationListState createState() => _NotificationListState();
 }
 
 class _NotificationListState extends State<NotificationList> {
   List<NotificationItem> allNotifications = [
-    NotificationItem(
+    const NotificationItem(
       title: 'Fermentum Venenatis Tortor',
       sender: 'Marvin McKinney',
       time: '10',
       isImportant: true,
     ),
-    NotificationItem(
+    const NotificationItem(
       title: 'Fermentum Venenatis Tortor',
       sender: 'Marvin McKinney',
       time: '10',
       isImportant: false,
     ),
-    NotificationItem(
+    const NotificationItem(
       title: 'Fermentum Venenatis Tortor',
       sender: 'Marvin McKinney',
       time: '10',
       isImportant: true,
     ),
-    NotificationItem(
+    const NotificationItem(
       title: 'Fermentum Venenatis Tortor',
       sender: 'Marvin McKinney',
       time: '10',
@@ -110,7 +112,7 @@ class _NotificationListState extends State<NotificationList> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: ['All', 'Unread', 'System', 'Important'].map((label) {
             return ChoiceChip(
-              selectedColor: Color(0xFF2A9D8F),
+              selectedColor: const Color(0xFF2A9D8F),
               label: Text(label),
               selected: filter == label,
               onSelected: (selected) {
@@ -139,6 +141,8 @@ class _NotificationListState extends State<NotificationList> {
 }
 
 class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -151,8 +155,8 @@ class NotificationScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            SizedBox(height: 5),
-            Expanded(
+            const SizedBox(height: 5),
+            const Expanded(
               child: NotificationList(),
             ),
           ],

@@ -5,7 +5,7 @@ class TopBar extends StatelessWidget {
   final String title;
   final VoidCallback onBackPressed;
 
-  const TopBar({
+  const TopBar({super.key, 
     required this.title,
     required this.onBackPressed,
   });
@@ -51,7 +51,7 @@ class TopBar extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NotificationScreen()),
+                  MaterialPageRoute(builder: (context) => const NotificationScreen()),
                 );
               },
             ),

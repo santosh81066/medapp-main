@@ -5,6 +5,8 @@ import 'package:gomedserv/widgets/topbar.dart';
 import 'package:gomedserv/models/manage_users_model.dart';
 
 class VendorList extends StatefulWidget {
+  const VendorList({super.key});
+
   @override
   _VendorListState createState() => _VendorListState();
 }
@@ -52,13 +54,13 @@ class _VendorListState extends State<VendorList> {
               if (filteredUsers.isEmpty)
                 Padding(
                   padding: EdgeInsets.all(padding),
-                  child: Text(
+                  child: const Text(
                     'No users found.',
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 )
               else
-                Container(
+                SizedBox(
                   height: userListHeight,
                   child: _buildUserList(filteredUsers),
                 ),
@@ -88,12 +90,12 @@ class _VendorListState extends State<VendorList> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AddVendor()),
+                MaterialPageRoute(builder: (context) => const AddVendor()),
               );
             },
             child: const Text(
@@ -175,7 +177,7 @@ class _VendorListState extends State<VendorList> {
           elevation: 4,
           child: ListTile(
             title: Text(
-              "${user.username ?? "No Name"}",
+              user.username ?? "No Name",
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 18,
@@ -186,12 +188,12 @@ class _VendorListState extends State<VendorList> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "${user.email ?? "No Email"}",
+                  user.email ?? "No Email",
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                 ),
                 Text(
-                  "${user.date ?? "No Date"}",
+                  user.date ?? "No Date",
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: const TextStyle(
@@ -207,7 +209,7 @@ class _VendorListState extends State<VendorList> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "${user.status ?? "Active"}",
+                  user.status ?? "Active",
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: TextStyle(

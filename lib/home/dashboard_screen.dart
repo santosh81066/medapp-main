@@ -10,6 +10,8 @@ import 'package:gomedserv/vendor_management/vendor_list.dart';
 import 'package:gomedserv/widgets/bottomnavigation.dart';
 
 class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -72,21 +74,21 @@ class DashboardScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AnalyticsReportsScreen(),
+                  builder: (context) => const AnalyticsReportsScreen(),
                 ),
               );
             } else if (index == 2) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ManageScreen(),
+                  builder: (context) => const ManageScreen(),
                 ),
               );
             } else if (index == 3) {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SettingsScreen(),
+                  builder: (context) => const SettingsScreen(),
                 ),
               );
             }
@@ -116,22 +118,22 @@ class DashboardScreen extends StatelessWidget {
         if (title == 'Manage Users') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ManageUsersScreen()),
+            MaterialPageRoute(builder: (context) => const ManageUsersScreen()),
           );
         } else if (title == 'Manage Services') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ManageServices()),
+            MaterialPageRoute(builder: (context) => const ManageServices()),
           );
         } else if (title == 'Manage Bookings') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BookingManagement()),
+            MaterialPageRoute(builder: (context) => const BookingManagement()),
           );
         } else if (title == 'Manage Vendors') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => VendorList()),
+            MaterialPageRoute(builder: (context) => const VendorList()),
           );
         }
       },
@@ -291,7 +293,7 @@ class DashboardScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => NotificationScreen()),
+                          builder: (context) => const NotificationScreen()),
                     );
                   },
                 ),

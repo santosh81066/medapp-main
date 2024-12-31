@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           // Check if the user has a valid refresh token and user status
           if (authState.data.refreshToken.isNotEmpty) {
             print('Refresh token exists: ${authState.data.refreshToken}');
-            return DashboardScreen(); // User is authenticated, redirect to Home
+            return const DashboardScreen(); // User is authenticated, redirect to Home
           } else {
             print('No valid refresh token, trying auto-login');
           }
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             future: ref.read(authProvider.notifier).tryAutoLogin(),
             builder: (context, snapshot) {
               print(
-                  'Token after auto-login attempt: ${authState.data?.accessToken}');
+                  'Token after auto-login attempt: ${authState.data.accessToken}');
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(
                   child: CircularProgressIndicator(),
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
                   snapshot.data == true &&
                   authState.data.refreshToken.isEmpty) {
                 // If auto-login is successful, redirect to Home
-                return DashboardScreen();
+                return const DashboardScreen();
               } else {
                 // If auto-login fails, show the Login page
                 return const LoginScreen();

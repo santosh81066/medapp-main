@@ -4,6 +4,8 @@ import 'package:gomedserv/widgets/custom_button.dart';
 import 'package:gomedserv/widgets/bottomnavigation.dart';
 
 class AddCommission extends StatefulWidget {
+  const AddCommission({super.key});
+
   @override
   _AddCommissionState createState() => _AddCommissionState();
 }
@@ -72,17 +74,17 @@ class _AddCommissionState extends State<AddCommission> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
+                              const BorderSide(color: Color(0xFF2A9D8F), width: 2.0),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
+                              const BorderSide(color: Color(0xFF2A9D8F), width: 1.0),
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
                       value: selectedServiceVendor,
-                      items: [
+                      items: const [
                         DropdownMenuItem(
                           value: 'Service A',
                           child: Text('Service A'),
@@ -120,12 +122,12 @@ class _AddCommissionState extends State<AddCommission> {
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Color(0xFF2A9D8F), width: 2.0),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                     color: Color(0xFF2A9D8F), width: 1.0),
                                 borderRadius: BorderRadius.circular(12.0),
                               ),

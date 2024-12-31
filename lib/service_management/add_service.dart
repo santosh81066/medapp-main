@@ -5,6 +5,8 @@ import 'package:gomedserv/widgets/bottomnavigation.dart';
 import 'package:intl/intl.dart';
 
 class AddServiceScreen extends StatefulWidget {
+  const AddServiceScreen({super.key});
+
   @override
   _AddServiceScreenState createState() => _AddServiceScreenState();
 }
@@ -66,12 +68,12 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 2.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 1.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -93,12 +95,12 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 2.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 1.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -133,12 +135,12 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 2.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 1.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -162,12 +164,12 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 2.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                                 color: Color(0xFF2A9D8F), width: 1.0),
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -185,7 +187,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                       ),
 
                       SizedBox(height: spacingScale),
-                      Text(
+                      const Text(
                         'Availability',
                         style: TextStyle(color: Color(0xFF2A9D8F)),
                       ),
@@ -200,7 +202,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                               });
                             },
                           ),
-                          Text('Everyday'),
+                          const Text('Everyday'),
                           Radio<String>(
                             value: 'EveryWeek',
                             groupValue: _selectedAvailability,
@@ -210,7 +212,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                               });
                             },
                           ),
-                          Text('EveryWeek'),
+                          const Text('EveryWeek'),
                           Radio<String>(
                             value: 'Weekends',
                             groupValue: _selectedAvailability,
@@ -220,7 +222,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                               });
                             },
                           ),
-                          Text('Weekends'),
+                          const Text('Weekends'),
                           // Radio<String>(
                           //   value: 'Custom',
                           //   groupValue: _selectedAvailability,
@@ -241,10 +243,10 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                       SizedBox(height: spacingScale),
                       ElevatedButton(
                         onPressed: _showDatePicker,
-                        child: Text('Select Date'),
                         style: ElevatedButton.styleFrom(
                           minimumSize: Size(double.infinity, buttonHeight),
                         ),
+                        child: const Text('Select Date'),
                       ),
                       SizedBox(
                           height: spacingScale *
@@ -259,15 +261,15 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  backgroundColor: Color(0xFF2A9D8F),
-                                  title: Text(
+                                  backgroundColor: const Color(0xFF2A9D8F),
+                                  title: const Text(
                                     'Success',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                     ),
                                   ),
-                                  content: Text(
+                                  content: const Text(
                                     'Service successfully added.',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -275,7 +277,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                                   ),
                                   actions: [
                                     TextButton(
-                                      child: Text('OK'),
+                                      child: const Text('OK'),
                                       onPressed: () {
                                         Navigator.of(context)
                                             .pop(); // Close the dialog

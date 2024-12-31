@@ -1,8 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gomedserv/utils/gomedapi.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -87,10 +85,10 @@ class AuthNotifier extends StateNotifier<AuthState> {
     // Check if the userStatus is valid
 
     // Debug: Log the access token
-    print('Refresh token from tryAutoLogin: ${state.data?.refreshToken}');
+    print('Refresh token from tryAutoLogin: ${state.data.refreshToken}');
 
     // Return true if access token is not empty
-    return state.data.accessToken != null && state.data.accessToken.isNotEmpty;
+    return state.data.accessToken.isNotEmpty;
   }
 
   Future<int> adminLogin(WidgetRef ref,
@@ -143,13 +141,13 @@ class AuthNotifier extends StateNotifier<AuthState> {
         case 201:
           print("Login success - Access and refresh tokens received");
           final authState = AuthState.fromJson(responseData);
-          final newAccessToken = authState.data?.accessToken;
+          final newAccessToken = authState.data.accessToken;
           final newAccessTokenExpiryDate =
               authState.data.accessTokenExpiresAt != null
                   ? DateTime.fromMillisecondsSinceEpoch(
-                      authState.data!.accessTokenExpiresAt!)
+                      authState.data.accessTokenExpiresAt!)
                   : null;
-          final newRefreshToken = authState.data?.refreshToken;
+          final newRefreshToken = authState.data.refreshToken;
           final newRefreshTokenExpiryDate =
               authState.data.refreshTokenExpiresAt != null
                   ? DateTime.fromMillisecondsSinceEpoch(

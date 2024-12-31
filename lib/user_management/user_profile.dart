@@ -8,7 +8,7 @@ import 'package:gomedserv/models/manage_users_model.dart';
 class UserProfileScreen extends StatelessWidget {
   final User user;
 
-  UserProfileScreen({required this.user});
+  const UserProfileScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class UserProfileScreen extends StatelessWidget {
                 },
               ),
               SizedBox(height: screenHeight * 0.02), // 2% of screen height
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: Card(
                   elevation: 4.0,
@@ -111,38 +111,38 @@ class UserProfileScreen extends StatelessWidget {
                     border: TableBorder.all(color: Colors.white),
                     columnWidths: {
                       0: FixedColumnWidth(screenWidth * 0.1),
-                      1: FlexColumnWidth(),
+                      1: const FlexColumnWidth(),
                       2: FixedColumnWidth(screenWidth * 0.25),
-                      3: FlexColumnWidth(),
+                      3: const FlexColumnWidth(),
                       4: FixedColumnWidth(screenWidth * 0.18),
                     },
                     children: [
                       TableRow(
-                        decoration: BoxDecoration(color: Color(0xFF2A9D8F)),
+                        decoration: const BoxDecoration(color: Color(0xFF2A9D8F)),
                         children: [
                           Padding(
                             padding: EdgeInsets.all(screenWidth * 0.02),
-                            child: Text('S.no',
+                            child: const Text('S.no',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: EdgeInsets.all(screenWidth * 0.02),
-                            child: Text('Service',
+                            child: const Text('Service',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: EdgeInsets.all(screenWidth * 0.02),
-                            child: Text('Date',
+                            child: const Text('Date',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: EdgeInsets.all(screenWidth * 0.02),
-                            child: Text('Assign',
+                            child: const Text('Assign',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                           Padding(
                             padding: EdgeInsets.all(screenWidth * 0.02),
-                            child: Text('Status',
+                            child: const Text('Status',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
                         ],

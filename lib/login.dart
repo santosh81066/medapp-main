@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         ),
                                       ),
                                       child: loader == true
-                                          ? CircularProgressIndicator(
+                                          ? const CircularProgressIndicator(
                                               color: Colors.white,
                                             )
                                           : const Text(

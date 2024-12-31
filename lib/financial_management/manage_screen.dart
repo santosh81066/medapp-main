@@ -59,7 +59,7 @@ class _ManageScreenState extends State<ManageScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: LineChart(
                           LineChartData(
-                            gridData: FlGridData(show: true),
+                            gridData: const FlGridData(show: true),
                             titlesData: FlTitlesData(
                               bottomTitles: AxisTitles(
                                 sideTitles: SideTitles(
@@ -117,7 +117,7 @@ class _ManageScreenState extends State<ManageScreen> {
                                 isCurved: true,
                                 barWidth: 2,
                                 color: const Color(0xFF2A9D8F),
-                                dotData: FlDotData(show: true),
+                                dotData: const FlDotData(show: true),
                                 belowBarData: BarAreaData(show: false),
                               ),
                             ],
@@ -221,7 +221,7 @@ class _ManageScreenState extends State<ManageScreen> {
             payment['amount'] as double? ?? 0.0; // Cast and provide default
 
         return Card(
-          color: Color(0xFFD2F1E4),
+          color: const Color(0xFFD2F1E4),
           elevation: 4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -279,7 +279,7 @@ class _ManageScreenState extends State<ManageScreen> {
       itemBuilder: (context, index) {
         final transaction = transactions[index];
         return Card(
-          color: Color(0xFFD2F1E4),
+          color: const Color(0xFFD2F1E4),
           elevation: 4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

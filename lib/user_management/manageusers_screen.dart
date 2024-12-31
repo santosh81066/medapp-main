@@ -5,6 +5,8 @@ import 'package:gomedserv/widgets/topbar.dart';
 import 'package:gomedserv/models/manage_users_model.dart';
 
 class ManageUsersScreen extends StatefulWidget {
+  const ManageUsersScreen({super.key});
+
   @override
   _ManageUsersScreenState createState() => _ManageUsersScreenState();
 }
@@ -88,7 +90,7 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
           ),
           GestureDetector(
             onTap: () {},
-            child: Text(
+            child: const Text(
               "Deactivate",
               style: TextStyle(
                 decoration: TextDecoration.underline,
@@ -127,7 +129,7 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
   }
 
   Widget _buildUserList(List<User> users, double listHeight) {
-    return Container(
+    return SizedBox(
       height: listHeight,
       child: ListView.builder(
         padding: EdgeInsets.zero,
@@ -143,7 +145,7 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
             margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 12.0),
             child: ListTile(
               title: Text(
-                "${user.username ?? "No Name"}",
+                user.username ?? "No Name",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: MediaQuery.of(context).size.width *
@@ -155,12 +157,12 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${user.email ?? "No Email"}",
+                    user.email ?? "No Email",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
                   Text(
-                    "${user.date ?? "No Date"}",
+                    user.date ?? "No Date",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -177,7 +179,7 @@ class _ManageUsersScreenState extends State<ManageUsersScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "${user.status ?? "Active"}",
+                    user.status ?? "Active",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(

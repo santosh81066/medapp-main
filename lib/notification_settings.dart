@@ -3,6 +3,8 @@ import 'package:gomedserv/widgets/bottomnavigation.dart';
 import 'package:gomedserv/widgets/topbar.dart';
 
 class NotificationSettings extends StatefulWidget {
+  const NotificationSettings({super.key});
+
   @override
   _NotificationSettingsState createState() => _NotificationSettingsState();
 }
@@ -32,7 +34,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Mobile Notifications Section
               Padding(
@@ -42,7 +44,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ToggleSettingsTile(
                 title: 'Promotions',
                 value: isPromotionsEnabled,
@@ -80,7 +82,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 },
               ),
 
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
 
               // Event Notifications Section
               Padding(
@@ -90,7 +92,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ToggleSettingsTile(
                 title: 'Event Reminders',
                 value: isEventReminderEnabled,
@@ -146,7 +148,7 @@ class ToggleSettingsTile extends StatelessWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
 
-  const ToggleSettingsTile({
+  const ToggleSettingsTile({super.key, 
     required this.title,
     required this.value,
     required this.onChanged,
@@ -159,7 +161,7 @@ class ToggleSettingsTile extends StatelessWidget {
       trailing: Switch(
         value: value,
         onChanged: onChanged,
-        activeColor: Color(0xFF2A9D8F),
+        activeColor: const Color(0xFF2A9D8F),
       ),
     );
   }

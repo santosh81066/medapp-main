@@ -83,13 +83,13 @@ class _BookingManagementState extends State<BookingManagement> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddCommission(),
+                  builder: (context) => const AddCommission(),
                 ),
               );
             },
@@ -171,7 +171,7 @@ class _BookingManagementState extends State<BookingManagement> {
             ),
             child: ListTile(
               title: Text(
-                "${user.username ?? "No Name"}",
+                user.username ?? "No Name",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: listHeight * 0.03, // Adjust based on list height
@@ -182,7 +182,7 @@ class _BookingManagementState extends State<BookingManagement> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${user.email ?? "No Email"}",
+                    user.email ?? "No Email",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -191,7 +191,7 @@ class _BookingManagementState extends State<BookingManagement> {
                     ),
                   ),
                   Text(
-                    "${user.date ?? "No Date"}",
+                    user.date ?? "No Date",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -208,7 +208,7 @@ class _BookingManagementState extends State<BookingManagement> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "${user.status ?? "Active"}",
+                    user.status ?? "Active",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
@@ -224,7 +224,7 @@ class _BookingManagementState extends State<BookingManagement> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AddCommission()),
+                  MaterialPageRoute(builder: (context) => const AddCommission()),
                 );
               },
             ),

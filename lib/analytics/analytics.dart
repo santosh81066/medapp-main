@@ -5,6 +5,8 @@ import 'package:gomedserv/widgets/topbar.dart';
 import 'package:gomedserv/widgets/custom_button.dart';
 
 class AnalyticsReportsScreen extends StatefulWidget {
+  const AnalyticsReportsScreen({super.key});
+
   @override
   _AnalyticsReportsScreenState createState() => _AnalyticsReportsScreenState();
 }
@@ -34,7 +36,7 @@ class _AnalyticsReportsScreenState extends State<AnalyticsReportsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Select Report Type',
                       style: TextStyle(
                         fontSize: 18,
@@ -131,7 +133,7 @@ class _AnalyticsReportsScreenState extends State<AnalyticsReportsScreen> {
                   _buildBarChartGroupData(2, 10, const Color(0xFF2A9D8F)),
                 ],
                 titlesData: FlTitlesData(
-                  leftTitles: AxisTitles(
+                  leftTitles: const AxisTitles(
                     sideTitles: SideTitles(showTitles: true),
                   ),
                   bottomTitles: AxisTitles(
@@ -190,7 +192,7 @@ class _AnalyticsReportsScreenState extends State<AnalyticsReportsScreen> {
                       },
                     ),
                   ),
-                  bottomTitles: AxisTitles(
+                  bottomTitles: const AxisTitles(
                     sideTitles: SideTitles(showTitles: true),
                   ),
                 ),
@@ -217,7 +219,7 @@ class _AnalyticsReportsScreenState extends State<AnalyticsReportsScreen> {
             aspectRatio: 1.7,
             child: LineChart(
               LineChartData(
-                titlesData: FlTitlesData(
+                titlesData: const FlTitlesData(
                   leftTitles: AxisTitles(
                     sideTitles: SideTitles(showTitles: true),
                   ),
@@ -237,7 +239,7 @@ class _AnalyticsReportsScreenState extends State<AnalyticsReportsScreen> {
                     ],
                     isCurved: true,
                     color: Colors.orange,
-                    dotData: FlDotData(show: false),
+                    dotData: const FlDotData(show: false),
                   ),
                 ],
               ),

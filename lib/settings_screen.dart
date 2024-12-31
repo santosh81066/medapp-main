@@ -4,6 +4,8 @@ import 'package:gomedserv/notification_settings.dart';
 import 'package:gomedserv/widgets/topbar.dart';
 
 class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SettingsTile(
                 title: 'Profile Settings',
                 onTap: () {
@@ -36,7 +38,7 @@ class SettingsScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NotificationSettings(),
+                      builder: (context) => const NotificationSettings(),
                     ),
                   );
                 },
@@ -54,7 +56,7 @@ class SettingsScreen extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text(
+                title: const Text(
                   'Leave a Review',
                   style: TextStyle(
                     fontSize: 18,
@@ -67,9 +69,9 @@ class SettingsScreen extends StatelessWidget {
                   // Handle Leave a Review action
                 },
               ),
-              SizedBox(height: 200),
+              const SizedBox(height: 200),
               ListTile(
-                title: Text(
+                title: const Text(
                   'Delete Account',
                   style: TextStyle(
                     fontSize: 18,
@@ -101,7 +103,7 @@ class SettingsTile extends StatelessWidget {
   final VoidCallback onTap;
   final TextStyle? textStyle;
 
-  const SettingsTile({
+  const SettingsTile({super.key, 
     required this.title,
     required this.onTap,
     this.textStyle,
@@ -113,7 +115,7 @@ class SettingsTile extends StatelessWidget {
       title: Text(
         title,
         style: textStyle ??
-            TextStyle(
+            const TextStyle(
                 fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
       ),
       onTap: onTap,
